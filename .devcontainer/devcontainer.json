@@ -1,0 +1,46 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.185.0/containers/python-3
+{
+	"name": "Python 3",
+	"dockerComposeFile": "../docker/docker-compose.yml",
+	"service": "python",
+	"workspaceFolder": "/app",
+  	"shutdownAction": "stopCompose",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 	
+
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-python.python",
+		"mhutchie.git-graph",
+		"eamodio.gitlens",
+		"mechatroner.rainbow-csv",
+		"gruntfuggly.todo-tree",
+		"redhat.vscode-yaml",
+		"jebbs.plantuml",
+		"ms-python.vscode-pylance",
+		"aaron-bond.better-comments",
+		"coenraads.bracket-pair-colorizer",
+		"ms-toolsai.jupyter"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [9000],
+
+	// Use 'portsAttributes' to set default properties for specific forwarded ports. More info: https://code.visualstudio.com/docs/remote/devcontainerjson-reference.
+	"portsAttributes": { },
+
+	// Use 'otherPortsAttributes' to configure any ports that aren't configured using 'portsAttributes'.
+	// "otherPortsAttributes": {
+	// 		"onAutoForward": "silent"
+	// },
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	//"postCreateCommand": "pip3 install -r requirements.txt",
+
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "prdev"
+}

@@ -1,0 +1,311 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "presentation": {
+      "echo": true,
+      "reveal": "always",
+      "focus": false,
+      "panel": "shared",
+      "showReuseMessage": true,
+      "clear": true
+    },
+    "tasks": [
+      {
+        "type": "shell",
+        "label": "env-clean",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "exec",
+          "python",
+          "make",
+          "env-clean"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "type": "shell",
+        "label": "env-init",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "exec",
+          "python",
+          "make",
+          "env-init"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "type": "shell",
+        "label": "build-build-deps",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "exec",
+          "python",
+          "make",
+          "build-deps"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "type": "shell",
+        "label": "env-install",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "exec",
+          "python",
+          "make",
+          "env-install"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "type": "shell",
+        "label": "build-build-test-deps",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "exec",
+          "python",
+          "make",
+          "build-test-deps"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "type": "shell",
+        "label": "env-setup",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "exec",
+          "python",
+          "make",
+          "env-setup"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "type": "shell",
+        "label": "build-build-dist",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "exec",
+          "python",
+          "make",
+          "build-dist"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "dev-docs",
+        "type": "shell",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "exec",
+          "python",
+          "make",
+          "dev-docs"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "dev-coverage",
+        "type": "shell",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "exec",
+          "python",
+          "make",
+          "dev-coverage"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "dev-style",
+        "type": "shell",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "exec",
+          "python",
+          "make",
+          "dev-style"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "dev-black",
+        "type": "shell",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "exec",
+          "python",
+          "make",
+          "dev-black"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "dev-typing",
+        "type": "shell",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "exec",
+          "python",
+          "make",
+          "dev-typing"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "dev-tests",
+        "type": "shell",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "exec",
+          "python",
+          "make",
+          "dev-tests"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "type": "shell",
+        "label": "docker-compose-build",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "build",
+          "-m",
+          "4g"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "type": "shell",
+        "label": "docker-compose-up",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "up",
+          "-d"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "type": "shell",
+        "label": "docker-compose-down",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "down"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      {
+        "type": "shell",
+        "label": "docker-compose-status",
+        "command": "docker-compose",
+        "args": [
+          "-f",
+          "docker/docker-compose.yml",
+          "ps"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      }
+    ]
+}
